@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.manusunny.pinlock" >
+
+    <application
+        android:supportsRtl="true" >
+        <activity android:name=".ConfirmPinActivity" />
+        <activity android:name=".SetPinActivity" />
+    </application>
+
+</manifest>

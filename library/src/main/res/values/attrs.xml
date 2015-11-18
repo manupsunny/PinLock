@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PinLock">
+        <attr name="pinLength" format="integer"/>
+
+        <attr name="buttonBackground" format="reference"/>
+        <attr name="buttonTextColor" format="color"/>
+        <attr name="buttonTextSize" format="float"/>
+
+        <attr name="statusEmptyBackground" format="reference"/>
+        <attr name="statusFilledBackground" format="reference"/>
+        <attr name="dotDiameter" format="dimension"/>
+        <attr name="dotSpacing" format="dimension"/>
+    </declare-styleable>
+</resources>
