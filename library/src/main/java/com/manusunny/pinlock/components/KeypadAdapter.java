@@ -1,3 +1,20 @@
+/*
+ * Copyright (C) 2015. Manu Sunny <manupsunny@gmail.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
 package com.manusunny.pinlock.components;
 
 import android.content.Context;
@@ -9,19 +26,46 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 
-import com.manusunny.pinlock.PinLock;
+import com.manusunny.pinlock.PinListener;
 import com.manusunny.pinlock.R;
 
+
+/**
+ * ViewAdaptor for Keypad which will add buttons to Keypad
+ * @see Keypad
+ * @since 1.0.0
+ */
 public class KeypadAdapter extends BaseAdapter {
 
-    private final LayoutInflater inflater;
-    private final TypedArray styledAttributes;
-    private PinLock pinLock;
 
-    public KeypadAdapter(Context context, TypedArray styledAttributes, PinLock pinLock) {
+    /**
+     * LayoutInflator which is used to inflate views to UI
+     */
+    private final LayoutInflater inflater;
+
+
+    /**
+     * TypedArray of styled attributes passed to the element
+     */
+    private final TypedArray styledAttributes;
+
+
+    /**
+     * Implementation of PinListener interface. Used to handle PIN change events
+     */
+    private PinListener pinListener;
+
+
+    /**
+     * Constructor
+     * @param context Current application context
+     * @param styledAttributes TypedArray of styled attributes passed to the element
+     * @param pinListener Implementation of PinListener interface
+     */
+    public KeypadAdapter(Context context, TypedArray styledAttributes, PinListener pinListener) {
         this.styledAttributes = styledAttributes;
         inflater = LayoutInflater.from(context);
-        this.pinLock = pinLock;
+        this.pinListener = pinListener;
     }
 
     @Override
@@ -49,6 +93,8 @@ public class KeypadAdapter extends BaseAdapter {
         } else {
             view = (Button) convertView;
         }
+
+        setStyle(view);
         setValues(position, view);
 
         view.setOnClickListener(new View.OnClickListener() {
@@ -58,9 +104,9 @@ public class KeypadAdapter extends BaseAdapter {
                 Button key = (Button) v;
                 final String keyText = key.getText().toString();
                 Keypad.pin = Keypad.pin.concat(keyText);
-                pinLock.onPinValueChange(Keypad.pin.length());
+                pinListener.onPinValueChange(Keypad.pin.length());
                 if (Keypad.pin.length() == pinLength) {
-                    pinLock.onCompleted(Keypad.pin);
+                    pinListener.onCompleted(Keypad.pin);
                     Keypad.pin = "";
                 }
             }
@@ -68,7 +114,12 @@ public class KeypadAdapter extends BaseAdapter {
         return view;
     }
 
-    private void setValues(int position, Button view) {
+
+    /**
+     * Setting Button background styles such as background, size and shape
+     * @param view Button itself
+     */
+    private void setStyle(Button view) {
         view.setTextSize(styledAttributes.getFloat(R.styleable.PinLock_buttonTextSize, 22));
 
         final int color = styledAttributes.getColor(R.styleable.PinLock_buttonTextColor, Color.BLACK);
@@ -77,6 +128,15 @@ public class KeypadAdapter extends BaseAdapter {
         final int background = styledAttributes
                 .getResourceId(R.styleable.PinLock_buttonBackground, R.drawable.rectangle);
         view.setBackgroundResource(background);
+    }
+
+
+    /**
+     * Setting Button text
+     * @param position Position of Button in GridView
+     * @param view Button itself
+     */
+    private void setValues(int position, Button view) {
 
         if (position == 10) {
             view.setText("0");

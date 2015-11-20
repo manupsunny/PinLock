@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.manusunny.pinlock.PinLock;
+import com.manusunny.pinlock.PinListener;
 
 public class MainActivity extends Activity {
 
@@ -69,27 +69,27 @@ public class MainActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode){
             case REQUEST_CODE_SET_PIN : {
-                if(resultCode == PinLock.SUCCESS){
+                if(resultCode == PinListener.SUCCESS){
                     Toast.makeText(this, "Pin is set :)", Toast.LENGTH_SHORT).show();
-                } else if(resultCode == PinLock.CANCELLED) {
+                } else if(resultCode == PinListener.CANCELLED) {
                     Toast.makeText(this, "Pin set cancelled :|", Toast.LENGTH_SHORT).show();
                 }
                 refreshActivity();
                 break;
             }
             case REQUEST_CODE_CHANGE_PIN : {
-                if(resultCode == PinLock.SUCCESS){
+                if(resultCode == PinListener.SUCCESS){
                     Intent intent = new Intent(MainActivity.this, SetPinActivitySample.class);
                     startActivityForResult(intent, REQUEST_CODE_SET_PIN);
-                } else if(resultCode == PinLock.CANCELLED){
+                } else if(resultCode == PinListener.CANCELLED){
                     Toast.makeText(this, "Pin change cancelled :|", Toast.LENGTH_SHORT).show();
                 }
                 break;
             }
             case REQUEST_CODE_CONFIRM_PIN : {
-                if(resultCode == PinLock.SUCCESS){
+                if(resultCode == PinListener.SUCCESS){
                     Toast.makeText(this, "Pin is correct :)", Toast.LENGTH_SHORT).show();
-                } else if(resultCode == PinLock.CANCELLED) {
+                } else if(resultCode == PinListener.CANCELLED) {
                     Toast.makeText(this, "Pin confirm cancelled :|", Toast.LENGTH_SHORT).show();
                 }
                 break;

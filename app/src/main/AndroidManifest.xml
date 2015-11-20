@@ -14,8 +14,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.msp.sample.SetPinActivitySample" />
-        <activity android:name="com.msp.sample.ConfirmPinActivitySample" />
+        <activity android:name=".SetPinActivitySample" />
+        <activity android:name=".ConfirmPinActivitySample" />
 
     </application>
 
