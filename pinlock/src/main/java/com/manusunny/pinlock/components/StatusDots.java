@@ -68,7 +68,7 @@ public class StatusDots extends LinearLayout {
 
     /**
      * Executed just before destroying StatusDots object. Used to recycle StyledAttributes properly
-     * @throws Throwable
+     * @throws Throwable Throws exception
      */
     @Override
     protected void finalize() throws Throwable {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="PinListener">
+    <declare-styleable name="PinLock">
         <attr name="pinLength" format="integer"/>
 
         <attr name="buttonBackground" format="reference"/>
