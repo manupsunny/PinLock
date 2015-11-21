@@ -78,4 +78,43 @@ bintray {
     }
 }
 
-bintrayUpload.dependsOn install
+task writeNewPom << {
+    pom {
+        project {
+            name 'PinLockLibrary'
+            description 'Plugin for adding PIN lock functionality to Android applications'
+            url siteUrl
+            inceptionYear '2015'
+
+            packaging 'aar'
+            groupId 'com.manusunny'
+            artifactId 'pinlock'
+            version properties.getProperty("version")
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+
+            scm {
+                url siteUrl
+                connection 'scm:git:git://github.com/manupsunny/PinLock.git'
+                developerConnection 'scm:git:git@github.com:manupsunny/PinLock.git'
+            }
+
+            developers {
+                developer {
+                    email 'manupsunny@gmail.com'
+                    name 'Manu Sunny'
+                    url 'https://manusunny.com'
+                    id 'manupsunny'
+                }
+            }
+        }
+    }.writeTo("$buildDir/poms/pom-default.xml")
+}
+
+bintrayUpload.dependsOn writeNewPom
