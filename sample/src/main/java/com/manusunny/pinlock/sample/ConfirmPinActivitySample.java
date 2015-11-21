@@ -1,4 +1,4 @@
-package com.msp.sample;
+package com.manusunny.pinlock.sample;
 
 import android.os.Bundle;
 import android.widget.Toast;

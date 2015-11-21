@@ -8,14 +8,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
 
-        <activity android:name="com.msp.sample.MainActivity" >
+        <activity android:name="com.manusunny.pinlock.sample.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SetPinActivitySample" />
-        <activity android:name=".ConfirmPinActivitySample" />
+        <activity android:name="com.manusunny.pinlock.sample.SetPinActivitySample" />
+        <activity android:name="com.manusunny.pinlock.sample.ConfirmPinActivitySample" />
 
     </application>
 

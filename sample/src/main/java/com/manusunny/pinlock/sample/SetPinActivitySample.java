@@ -1,4 +1,4 @@
-package com.msp.sample;
+package com.manusunny.pinlock.sample;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
