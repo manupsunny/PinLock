@@ -55,8 +55,8 @@ public class Dot extends View {
      * Setting up layout dimensional parameters for the view
      */
     private void setLayoutParameters() {
-        final int dotDiameter = styledAttributes.getDimensionPixelOffset(R.styleable.PinLock_dotDiameter, 50);
-        final int margin = styledAttributes.getDimensionPixelOffset(R.styleable.PinLock_dotSpacing, 30);
+        final int dotDiameter = styledAttributes.getDimensionPixelOffset(R.styleable.PinLock_statusDotDiameter, 50);
+        final int margin = styledAttributes.getDimensionPixelOffset(R.styleable.PinLock_statusDotSpacing, 30);
         final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(dotDiameter, dotDiameter);
         params.setMargins(margin, 0, margin, 0);
         setLayoutParams(params);

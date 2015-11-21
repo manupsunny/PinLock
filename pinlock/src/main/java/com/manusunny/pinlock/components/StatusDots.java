@@ -47,7 +47,7 @@ public class StatusDots extends LinearLayout {
     public StatusDots(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
-        styledAttributes = context.obtainStyledAttributes(attrs, R.styleable.PinLock);
+        styledAttributes = context.obtainStyledAttributes(R.style.PinLock, R.styleable.PinLock);
         initialize();
     }
 

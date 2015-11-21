@@ -20,6 +20,7 @@ package com.manusunny.pinlock.components;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +52,12 @@ public class KeypadAdapter extends BaseAdapter {
 
 
     /**
+     * Stores the context of current activity
+     */
+    private final Context context;
+
+
+    /**
      * Implementation of PinListener interface. Used to handle PIN change events
      */
     private PinListener pinListener;
@@ -64,7 +71,8 @@ public class KeypadAdapter extends BaseAdapter {
      */
     public KeypadAdapter(Context context, TypedArray styledAttributes, PinListener pinListener) {
         this.styledAttributes = styledAttributes;
-        inflater = LayoutInflater.from(context);
+        this.context = context;
+        inflater = LayoutInflater.from(this.context);
         this.pinListener = pinListener;
     }
 
@@ -104,6 +112,8 @@ public class KeypadAdapter extends BaseAdapter {
                 Button key = (Button) v;
                 final String keyText = key.getText().toString();
                 Keypad.pin = Keypad.pin.concat(keyText);
+
+                vibrateIfEnabled();
                 pinListener.onPinValueChange(Keypad.pin.length());
                 if (Keypad.pin.length() == pinLength) {
                     pinListener.onCompleted(Keypad.pin);
@@ -116,17 +126,31 @@ public class KeypadAdapter extends BaseAdapter {
 
 
     /**
+     * Vibrate device on each key press if the feature is enabled
+     */
+    private void vibrateIfEnabled() {
+        final boolean enabled = styledAttributes.getBoolean(R.styleable.PinLock_vibrateOnClick, false);
+        if(enabled){
+            Vibrator v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+            final int duration = styledAttributes.getInt(R.styleable.PinLock_vibrateDuration, 20);
+            v.vibrate(duration);
+        }
+    }
+
+
+    /**
      * Setting Button background styles such as background, size and shape
      * @param view Button itself
      */
     private void setStyle(Button view) {
-        view.setTextSize(styledAttributes.getFloat(R.styleable.PinLock_buttonTextSize, 22));
+        final int textSize = styledAttributes.getDimensionPixelOffset(R.styleable.PinLock_keypadTextSize, 20);
+        view.setTextSize(textSize);
 
-        final int color = styledAttributes.getColor(R.styleable.PinLock_buttonTextColor, Color.BLACK);
+        final int color = styledAttributes.getColor(R.styleable.PinLock_keypadTextColor, Color.BLACK);
         view.setTextColor(color);
 
         final int background = styledAttributes
-                .getResourceId(R.styleable.PinLock_buttonBackground, R.drawable.rectangle);
+                .getResourceId(R.styleable.PinLock_keypadButtonShape, R.drawable.rectangle);
         view.setBackgroundResource(background);
     }
 
@@ -137,7 +161,6 @@ public class KeypadAdapter extends BaseAdapter {
      * @param view Button itself
      */
     private void setValues(int position, Button view) {
-
         if (position == 10) {
             view.setText("0");
         } else if (position == 9) {

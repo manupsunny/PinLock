@@ -18,6 +18,8 @@
 package com.manusunny.pinlock;
 
 import android.app.Activity;
+import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -50,6 +52,7 @@ public abstract class BasePinActivity extends Activity implements PinListener {
      * Holds reference to forgot button added to the UI
      */
     private TextView forgetButton;
+    private TextView cancelButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,15 +63,17 @@ public abstract class BasePinActivity extends Activity implements PinListener {
 
         label = (TextView) findViewById(R.id.label);
         statusDots = (StatusDots) findViewById(R.id.statusDots);
+
         setupButtons();
+        setupStyles();
     }
 
 
     /**
-     * Setting up calcel and forgot buttons and adding onClickListeners to them
+     * Setting up cancel and forgot buttons and adding onClickListeners to them
      */
     private void setupButtons() {
-        TextView cancelButton = (TextView) findViewById(R.id.cancelButton);
+        cancelButton = (TextView) findViewById(R.id.cancelButton);
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +90,26 @@ public abstract class BasePinActivity extends Activity implements PinListener {
                 finish();
             }
         });
+    }
+
+
+    /**
+     * Setting up color and textSize for cancel/forgot buttons and info text
+     */
+    private void setupStyles() {
+        TypedArray styledAttributes = obtainStyledAttributes(R.style.PinLock, R.styleable.PinLock);
+        final int cancelForgotTextSize = styledAttributes.getDimensionPixelOffset(R.styleable.PinLock_cancelForgotTextSize, 20);
+        cancelButton.setTextSize(cancelForgotTextSize);
+        forgetButton.setTextSize(cancelForgotTextSize);
+
+        final int cancelForgotTextColor = styledAttributes.getColor(R.styleable.PinLock_cancelForgotTextColor, Color.BLACK);
+        cancelButton.setTextColor(cancelForgotTextColor);
+        forgetButton.setTextColor(cancelForgotTextColor);
+
+        final int infoTextSize = styledAttributes.getDimensionPixelOffset(R.styleable.PinLock_infoTextSize, 20);
+        final int infoTextColor = styledAttributes.getColor(R.styleable.PinLock_infoTextColor, Color.BLACK);
+        label.setTextSize(infoTextSize);
+        label.setTextColor(infoTextColor);
     }
 
 

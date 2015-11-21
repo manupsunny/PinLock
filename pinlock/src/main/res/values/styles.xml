@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="PinLock" >
+        <item name="pinLength">4</item>
+
+        <item name="keypadButtonShape">@drawable/rectangle</item>
+        <item name="keypadTextColor">#000000</item>
+        <item name="keypadTextSize">8dp</item>
+        <item name="keypadWidth">200dp</item>
+        <item name="keypadHeight">230dp</item>
+        <item name="keypadVerticalSpacing">2dp</item>
+        <item name="keypadHorizontalSpacing">2dp</item>
+
+        <item name="cancelForgotTextColor">#000000</item>
+        <item name="cancelForgotTextSize">6dp</item>
+
+        <item name="infoTextColor">#000000</item>
+        <item name="infoTextSize">8dp</item>
+
+        <item name="vibrateOnClick">true</item>
+        <item name="vibrateDuration">20</item>
+
+        <item name="statusEmptyBackground">@drawable/dot_empty</item>
+        <item name="statusFilledBackground">@drawable/dot_filled</item>
+        <item name="statusDotDiameter">8dp</item>
+        <item name="statusDotSpacing">10dp</item>
+
+    </style>
+
 </resources>
