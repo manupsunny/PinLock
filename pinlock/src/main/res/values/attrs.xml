@@ -11,6 +11,7 @@
         <attr name="keypadHeight" format="dimension"/>
         <attr name="keypadVerticalSpacing" format="dimension"/>
         <attr name="keypadHorizontalSpacing" format="dimension"/>
+        <attr name="keypadClickAnimationDuration" format="integer"/>
 
         <attr name="cancelForgotTextColor" format="color"/>
         <attr name="cancelForgotTextSize" format="dimension"/>

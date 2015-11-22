@@ -11,6 +11,7 @@
         <item name="keypadHeight">230dp</item>
         <item name="keypadVerticalSpacing">2dp</item>
         <item name="keypadHorizontalSpacing">2dp</item>
+        <item name="keypadClickAnimationDuration">100</item>
 
         <item name="cancelForgotTextColor">#000000</item>
         <item name="cancelForgotTextSize">6dp</item>

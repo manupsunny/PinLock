@@ -18,12 +18,13 @@
         <item name="keypadHeight">230dp</item>
         <item name="keypadVerticalSpacing">2dp</item>
         <item name="keypadHorizontalSpacing">2dp</item>
+        <item name="keypadClickAnimationDuration">100</item>
 
         <item name="cancelForgotTextColor">#000000</item>
         <item name="cancelForgotTextSize">6dp</item>
 
         <item name="infoTextColor">#000000</item>
-        <item name="infoTextSize">8dp</item>
+        <item name="infoTextSize">7dp</item>
 
         <item name="vibrateOnClick">true</item>
         <item name="vibrateDuration">20</item>
