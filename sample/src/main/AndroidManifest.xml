@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.msp.sample" >
+    package="com.manusunny.pinlock.sample">
     <uses-permission android:name="android.permission.VIBRATE"/>
     <application
         android:allowBackup="true"
@@ -8,14 +8,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
 
-        <activity android:name="com.manusunny.pinlock.sample.MainActivity" >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.manusunny.pinlock.sample.SetPinActivitySample" />
-        <activity android:name="com.manusunny.pinlock.sample.ConfirmPinActivitySample" />
+        <activity android:name=".SetPinActivitySample" />
+        <activity android:name=".ConfirmPinActivitySample" />
 
     </application>
 

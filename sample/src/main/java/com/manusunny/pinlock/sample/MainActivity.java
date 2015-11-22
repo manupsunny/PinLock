@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.manusunny.pinlock.PinListener;
-import com.msp.sample.R;
 
 public class MainActivity extends Activity {
 

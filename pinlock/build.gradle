@@ -72,7 +72,7 @@ bintray {
         publish = false
         version {
             name = properties.getProperty("version")
-            desc = 'Plugin for adding PIN lock functionality to Android applications'
+            desc = 'Making more configurable'
             released  = new Date()
         }
     }
@@ -109,7 +109,7 @@ task writeNewPom << {
                 developer {
                     email 'manupsunny@gmail.com'
                     name 'Manu Sunny'
-                    url 'https://manusunny.com'
+                    url 'http://manusunny.com'
                     id 'manupsunny'
                 }
             }
