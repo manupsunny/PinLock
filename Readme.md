@@ -11,7 +11,7 @@ An Android library which can be used for implementing PIN lock mechanism in Andr
 
 First, add PinLock dependency to your `build.gradle`
 ```
-compile 'com.manusunny:pinlock:1.0.0'
+compile 'com.manusunny:pinlock:1.1.0'
 ```
 
 ##### 1. Setting PIN
