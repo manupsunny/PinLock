@@ -110,7 +110,11 @@ public abstract class BasePinActivity extends Activity implements PinListener {
 
         final int cancelForgotTextColor = styledAttributes.getColor(R.styleable.PinLock_cancelForgotTextColor, Color.BLACK);
         cancelButton.setTextColor(cancelForgotTextColor);
-        forgetButton.setTextColor(cancelForgotTextColor);
+        if(forgetButton.isEnabled()) {
+            forgetButton.setTextColor(cancelForgotTextColor);
+        } else {
+            forgetButton.setTextColor(Color.parseColor("#a9abac"));
+        }
 
         final int infoTextSize = styledAttributes.getDimensionPixelOffset(R.styleable.PinLock_infoTextSize, 20);
         final int infoTextColor = styledAttributes.getColor(R.styleable.PinLock_infoTextColor, Color.BLACK);
@@ -124,6 +128,7 @@ public abstract class BasePinActivity extends Activity implements PinListener {
      */
     public void disableForgotButton(){
         forgetButton.setEnabled(false);
+        forgetButton.setTextColor(Color.parseColor("#a9abac"));
     }
 
 
@@ -160,5 +165,14 @@ public abstract class BasePinActivity extends Activity implements PinListener {
     @Override
     public void onPinValueChange(int length) {
         statusDots.updateStatusDots(length);
+    }
+
+
+    /**
+     * Has to be implemented in confirm PIN activity
+     */
+    @Override
+    public void onForgotPin() {
+        // handle forgot PIN scenario
     }
 }

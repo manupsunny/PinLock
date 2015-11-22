@@ -26,7 +26,7 @@ import android.os.Bundle;
  * All subclasses should implement isPinCorrect() method
  * @since 1.0.0
  */
-public abstract class SetPinActivity extends BasePinActivity implements PinListener {
+public abstract class SetPinActivity extends BasePinActivity {
 
 
     /**

@@ -26,7 +26,7 @@ import android.os.Bundle;
  * All subclasses should implement isPinCorrect() method
  * @since 1.0.0
  */
-public abstract class ConfirmPinActivity extends BasePinActivity implements PinListener {
+public abstract class ConfirmPinActivity extends BasePinActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +57,14 @@ public abstract class ConfirmPinActivity extends BasePinActivity implements PinL
      * @return Boolean value indicates the status of PIN entered
      */
     public abstract boolean isPinCorrect(String pin);
+
+
+    /**
+     * Abstract method which handles PIN forgot scenario
+     */
+    @Override
+    public abstract void onForgotPin();
+
 
     @Override
     public void onBackPressed() {

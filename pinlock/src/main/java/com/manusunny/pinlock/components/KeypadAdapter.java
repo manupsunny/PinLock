@@ -124,9 +124,7 @@ public class KeypadAdapter extends BaseAdapter {
                     pinListener.onCompleted(Keypad.pin);
                     Keypad.pin = "";
                 }
-                if(Keypad.pin.length() != 3) {
-                    transition.reverseTransition(duration);
-                }
+                transition.reverseTransition(duration);
             }
         });
         return view;
