@@ -93,7 +93,7 @@ Example:
 
 ### License
 
-    Copyright 2015 Manu Sunny
+    Copyright 2015 © Manu Sunny
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -111,6 +111,5 @@ Example:
 
 | SetPin | ConfirmPin | ChangePin |
 | :----: | :--------: | :--------:|
-| ![alt text](https://github.com/manupsunny/images/blob/master/PinSet.gif "PinSet") | ![alt text](https://github.com/manupsunny/images/blob/master/PinConfirm.gif "PinSet") | ![alt text](https://github.com/manupsunny/images/blob/master/PinChange.gif "PinSet") |
-
+| ![alt text](https://github.com/manupsunny/PinLock/blob/master/images/PinSet.gif "PinSet") | ![alt text](https://github.com/manupsunny/PinLock/blob/master/images/PinConfirm.gif "PinSet") | ![alt text](https://github.com/manupsunny/PinLock/blob/master/images/PinChange.gif "PinSet") |
 
