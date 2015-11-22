@@ -21,7 +21,6 @@ import android.app.Activity;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.View;
 import android.widget.TextView;
 

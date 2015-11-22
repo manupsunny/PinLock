@@ -1,8 +1,6 @@
 package com.manusunny.pinlock.sample;
 
 import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.widget.Toast;
 
 import com.manusunny.pinlock.SetPinActivity;
 
