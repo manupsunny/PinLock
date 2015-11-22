@@ -3,6 +3,7 @@
     <declare-styleable name="PinLock">
 
         <attr name="pinLength" format="integer"/>
+        <attr name="backgroundColor" format="color"/>
 
         <attr name="keypadButtonShape" format="reference"/>
         <attr name="keypadTextColor" format="color"/>

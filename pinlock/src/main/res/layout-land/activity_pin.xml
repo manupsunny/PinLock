@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pinLockLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -11,7 +12,6 @@
         android:baselineAligned="false">
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:custom="http://schemas.android.com/apk/res-auto"
             android:layout_width="0dp"
             android:layout_weight="0.5"
             android:layout_height="match_parent"
@@ -39,19 +39,18 @@
             </FrameLayout>
         </LinearLayout>
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="0dp"
             android:layout_weight="0.5"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_height="match_parent" >
 
             <com.manusunny.pinlock.components.Keypad
                 android:id="@+id/keypad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center" />
-        </LinearLayout>
+                android:gravity="center"
+                android:layout_gravity="center" />
+        </FrameLayout>
     </LinearLayout>
 
     <LinearLayout

@@ -21,6 +21,7 @@ import android.app.Activity;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
 import android.widget.TextView;
 
@@ -98,6 +99,11 @@ public abstract class BasePinActivity extends Activity implements PinListener {
      */
     private void setupStyles() {
         TypedArray styledAttributes = obtainStyledAttributes(R.style.PinLock, R.styleable.PinLock);
+
+        final int layoutBackground = styledAttributes.getColor(R.styleable.PinLock_backgroundColor, Color.WHITE);
+        View layout = findViewById(R.id.pinLockLayout);
+        layout.setBackgroundColor(layoutBackground);
+
         final int cancelForgotTextSize = styledAttributes.getDimensionPixelOffset(R.styleable.PinLock_cancelForgotTextSize, 20);
         cancelButton.setTextSize(cancelForgotTextSize);
         forgetButton.setTextSize(cancelForgotTextSize);

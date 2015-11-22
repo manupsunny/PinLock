@@ -3,6 +3,7 @@
 
     <style name="PinLock" >
         <item name="pinLength">4</item>
+        <item name="backgroundColor">#FFFFFF</item>
 
         <item name="keypadButtonShape">@drawable/rectangle</item>
         <item name="keypadTextColor">#000000</item>

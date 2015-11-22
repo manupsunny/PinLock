@@ -60,7 +60,6 @@ public abstract class ConfirmPinActivity extends BasePinActivity implements PinL
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         setResult(CANCELLED);
         finish();
     }
