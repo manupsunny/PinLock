@@ -116,13 +116,13 @@ public class KeypadAdapter extends BaseAdapter {
                 final int pinLength = styledAttributes.getInt(R.styleable.PinLock_pinLength, 4);
                 Button key = (Button) v;
                 final String keyText = key.getText().toString();
-                Keypad.pin = Keypad.pin.concat(keyText);
-
+                String currentPin = Keypad.onKeyPress(keyText);
+                int currentPinLength = currentPin.length();
                 vibrateIfEnabled();
-                pinListener.onPinValueChange(Keypad.pin.length());
-                if (Keypad.pin.length() == pinLength) {
-                    pinListener.onCompleted(Keypad.pin);
-                    Keypad.pin = "";
+                pinListener.onPinValueChange(currentPinLength);
+                if (currentPinLength == pinLength) {
+                    pinListener.onCompleted(currentPin);
+                    Keypad.resetPin();
                 }
                 transition.reverseTransition(duration);
             }

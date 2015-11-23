@@ -32,7 +32,7 @@ public abstract class SetPinActivity extends BasePinActivity {
     /**
      * Stores the first PIN entered by user. Used for confirmation
      */
-    String firstPin = "";
+    private String firstPin = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

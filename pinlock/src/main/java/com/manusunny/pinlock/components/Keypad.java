@@ -39,7 +39,7 @@ public class Keypad extends GridView {
     /**
      * Stores the PIN value entered by user
      */
-    static String pin;
+    private static String pin = "";
 
 
     /**
@@ -93,6 +93,23 @@ public class Keypad extends GridView {
      */
     public void setPinListener(PinListener pinListener) {
         setAdapter(new KeypadAdapter(context, styledAttributes, pinListener));
+    }
+
+
+    /**
+     * Getting the value of key pressed and appending it to current PIN
+     */
+    public static String onKeyPress(String key) {
+        pin = pin.concat(key);
+        return pin;
+    }
+
+
+    /**
+     * Reset current PIN to initial state
+     */
+    public static void resetPin(){
+        pin = "";
     }
 
 
