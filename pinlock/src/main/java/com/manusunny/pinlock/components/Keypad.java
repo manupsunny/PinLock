@@ -57,7 +57,6 @@ public class Keypad extends GridView {
         super(context, attrs);
         this.context = context;
         styledAttributes = context.obtainStyledAttributes(R.style.PinLock, R.styleable.PinLock);
-        pin = "";
         setNumColumns(3);
         setSpacing();
     }
