@@ -7,6 +7,8 @@
 
 # PinLock
 
+[![Join the chat at https://gitter.im/manupsunny/PinLock](https://badges.gitter.im/manupsunny/PinLock.svg)](https://gitter.im/manupsunny/PinLock?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 An Android library which can be used for implementing PIN lock mechanism in Android applications.
 
 ### Usage
