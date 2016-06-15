@@ -1,8 +1,9 @@
+[![Join the chat at https://gitter.im/manupsunny/PinLock](https://badges.gitter.im/manupsunny/PinLock.svg)](https://gitter.im/manupsunny/PinLock?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Maven Central](https://img.shields.io/maven-central/v/com.manusunny/pinlock.svg)](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22pinlock%22)
 [![Download](https://api.bintray.com/packages/manupsunny/maven/PinLock/images/download.svg)](https://bintray.com/manupsunny/maven/PinLock/_latestVersion)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/9889b3e5a1894ed8bdda28b078155807)](https://www.codacy.com/app/manupsunny/PinLock)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PinLock-orange.svg?style=flat)](http://android-arsenal.com/details/1/2824)
 [![Circle CI](https://circleci.com/gh/manupsunny/PinLock.svg?style=shield&circle-token=851fc23d68f8848cd06350b82a8391b94b65c337)](https://circleci.com/gh/manupsunny/PinLock)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9889b3e5a1894ed8bdda28b078155807)](https://www.codacy.com/app/manupsunny/PinLock)
 [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 # PinLock
@@ -13,7 +14,7 @@ An Android library which can be used for implementing PIN lock mechanism in Andr
 
 First, add PinLock dependency to your `build.gradle`. PinLock is available in both Maven and jCenter.
 ```
-compile 'com.manusunny:pinlock:1.1.0'
+compile 'com.manusunny:pinlock:+'
 ```
 
 ##### 1. Setting PIN
