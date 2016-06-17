@@ -33,7 +33,7 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = "maven"
-        name = "PinLockLibrary"
+        name = "PinLock"
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
