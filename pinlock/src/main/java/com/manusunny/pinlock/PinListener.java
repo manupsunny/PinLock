@@ -49,13 +49,6 @@ public interface PinListener {
      */
     int FORGOT = 4;
 
-    String TEXT_FIRST_TRY = "Enter PIN";
-    String TEXT_PIN_INVALID = "Invalid PIN. Try again";
-
-    String TEXT_FIRST_TRY_NEW = "Enter new PIN";
-    String TEXT_CONFIRM_PIN = "Re enter PIN";
-    String TEXT_PIN_MISMATCH = "PIN mismatch. Try again";
-
 
     /**
      * Invokes when user completes entering PIN

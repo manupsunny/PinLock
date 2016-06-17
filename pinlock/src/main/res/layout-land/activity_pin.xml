@@ -23,7 +23,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/enter_pin"
+                android:text="@string/message_enter_pin"
                 android:textSize="18sp"
                 android:layout_marginBottom="50dp" />
 
@@ -68,7 +68,7 @@
             android:layout_height="30dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/cancel"
+            android:text="@string/button_cancel"
             android:textSize="16sp" />
 
         <TextView
@@ -77,7 +77,7 @@
             android:layout_height="30dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/forgot"
+            android:text="@string/button_forgot_pin"
             android:textSize="16sp" />
     </LinearLayout>
 

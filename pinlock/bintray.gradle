@@ -1,0 +1,88 @@
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+def siteUrl = 'https://github.com/manupsunny/PinLock'
+def gitUrl = 'https://github.com/manupsunny/PinLock.git'
+
+group = 'com.manusunny'
+version = properties.getProperty("version")
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+    pkg {
+        repo = "maven"
+        name = "PinLockLibrary"
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = false
+        version {
+            name = properties.getProperty("version")
+            desc = 'Making more configurable'
+            released  = new Date()
+        }
+    }
+}
+
+task writeNewPom << {
+    pom {
+        project {
+            name 'PinLockLibrary'
+            description 'Plugin for adding PIN lock functionality to Android applications'
+            url siteUrl
+            inceptionYear '2015'
+
+            packaging 'aar'
+            groupId 'com.manusunny'
+            artifactId 'pinlock'
+            version properties.getProperty("version")
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+
+            scm {
+                url siteUrl
+                connection 'scm:git:git://github.com/manupsunny/PinLock.git'
+                developerConnection 'scm:git:git@github.com:manupsunny/PinLock.git'
+            }
+
+            developers {
+                developer {
+                    email 'manupsunny@gmail.com'
+                    name 'Manu Sunny'
+                    url 'http://manusunny.com'
+                    id 'manupsunny'
+                }
+            }
+        }
+    }.writeTo("$buildDir/poms/pom-default.xml")
+}
+
+bintrayUpload.dependsOn writeNewPom

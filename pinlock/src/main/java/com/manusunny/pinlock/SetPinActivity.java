@@ -37,7 +37,7 @@ public abstract class SetPinActivity extends BasePinActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setLabel(TEXT_FIRST_TRY_NEW);
+        setLabel(getString(R.string.message_enter_new_pin));
         disableForgotButton();
     }
 
@@ -51,14 +51,14 @@ public abstract class SetPinActivity extends BasePinActivity {
         resetStatus();
         if ("".equals(firstPin)) {
             firstPin = pin;
-            setLabel(TEXT_CONFIRM_PIN);
+            setLabel(getString(R.string.message_confirm_pin));
         } else {
             if (pin.equals(firstPin)) {
                 onPinSet(pin);
                 setResult(SUCCESS);
                 finish();
             } else {
-                setLabel(TEXT_PIN_MISMATCH);
+                setLabel(getString(R.string.message_pin_mismatch));
                 firstPin = "";
             }
         }

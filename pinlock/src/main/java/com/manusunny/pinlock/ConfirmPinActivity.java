@@ -31,7 +31,7 @@ public abstract class ConfirmPinActivity extends BasePinActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setLabel(TEXT_FIRST_TRY);
+        setLabel(getString(R.string.message_enter_pin));
     }
 
 
@@ -46,7 +46,7 @@ public abstract class ConfirmPinActivity extends BasePinActivity {
             setResult(SUCCESS);
             finish();
         } else {
-            setLabel(TEXT_PIN_INVALID);
+            setLabel(getString(R.string.message_invalid_pin));
         }
     }
 
