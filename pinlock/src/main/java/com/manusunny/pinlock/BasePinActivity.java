@@ -21,6 +21,7 @@ import android.app.Activity;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
 
@@ -103,9 +104,10 @@ public abstract class BasePinActivity extends Activity implements PinListener {
         View layout = findViewById(R.id.pinLockLayout);
         layout.setBackgroundColor(layoutBackground);
 
-        final int cancelForgotTextSize = styledAttributes.getDimensionPixelOffset(R.styleable.PinLock_cancelForgotTextSize, 20);
-        cancelButton.setTextSize(cancelForgotTextSize);
-        forgetButton.setTextSize(cancelForgotTextSize);
+        final int cancelForgotTextSize = styledAttributes.getInt(R.styleable.PinLock_cancelForgotTextSize, 20);
+        cancelButton.setTextSize(TypedValue.COMPLEX_UNIT_SP, cancelForgotTextSize);
+        forgetButton.setTextSize(TypedValue.COMPLEX_UNIT_SP, cancelForgotTextSize);
+
 
         final int cancelForgotTextColor = styledAttributes.getColor(R.styleable.PinLock_cancelForgotTextColor, Color.BLACK);
         cancelButton.setTextColor(cancelForgotTextColor);
@@ -115,9 +117,9 @@ public abstract class BasePinActivity extends Activity implements PinListener {
             forgetButton.setTextColor(Color.parseColor("#a9abac"));
         }
 
-        final int infoTextSize = styledAttributes.getDimensionPixelOffset(R.styleable.PinLock_infoTextSize, 20);
+        final int infoTextSize = styledAttributes.getInt(R.styleable.PinLock_infoTextSize, 20);
         final int infoTextColor = styledAttributes.getColor(R.styleable.PinLock_infoTextColor, Color.BLACK);
-        label.setTextSize(infoTextSize);
+        label.setTextSize(TypedValue.COMPLEX_UNIT_SP, infoTextSize);
         label.setTextColor(infoTextColor);
     }
 

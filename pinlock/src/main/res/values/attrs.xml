@@ -7,7 +7,7 @@
 
         <attr name="keypadButtonShape" format="reference"/>
         <attr name="keypadTextColor" format="color"/>
-        <attr name="keypadTextSize" format="dimension"/>
+        <attr name="keypadTextSize" format="integer"/>
         <attr name="keypadWidth" format="dimension"/>
         <attr name="keypadHeight" format="dimension"/>
         <attr name="keypadVerticalSpacing" format="dimension"/>
@@ -15,10 +15,10 @@
         <attr name="keypadClickAnimationDuration" format="integer"/>
 
         <attr name="cancelForgotTextColor" format="color"/>
-        <attr name="cancelForgotTextSize" format="dimension"/>
+        <attr name="cancelForgotTextSize" format="integer"/>
 
         <attr name="infoTextColor" format="color"/>
-        <attr name="infoTextSize" format="dimension"/>
+        <attr name="infoTextSize" format="integer"/>
 
         <attr name="vibrateOnClick" format="boolean"/>
         <attr name="vibrateDuration" format="integer"/>

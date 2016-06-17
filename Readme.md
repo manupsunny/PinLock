@@ -70,7 +70,7 @@ Example:
 
         <item name="keypadButtonShape">@drawable/rectangle</item>
         <item name="keypadTextColor">#000000</item>
-        <item name="keypadTextSize">8dp</item>
+        <item name="keypadTextSize">20</item>
         <item name="keypadWidth">200dp</item>
         <item name="keypadHeight">230dp</item>
         <item name="keypadVerticalSpacing">2dp</item>
@@ -78,10 +78,10 @@ Example:
         <item name="keypadClickAnimationDuration">100</item>
 
         <item name="cancelForgotTextColor">#000000</item>
-        <item name="cancelForgotTextSize">6dp</item>
+        <item name="cancelForgotTextSize">14</item>
 
         <item name="infoTextColor">#000000</item>
-        <item name="infoTextSize">8dp</item>
+        <item name="infoTextSize">20</item>
 
         <item name="vibrateOnClick">true</item>
         <item name="vibrateDuration">20</item>
